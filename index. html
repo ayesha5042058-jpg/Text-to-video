@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Text To Video Generator</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', sans-serif;
+      background: linear-gradient(to right, #1e293b, #0f172a);
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 80%;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #22c55e;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #16a34a;
+    }
+    footer {
+      margin-top: 60px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎬 Free Text to Video Generator</h1>
+  <p>اپنا Text نیچے لکھیں، اور ویڈیو بنانے کے لیے بٹن دبائیں 👇</p>
+
+  <input type="text" id="userText" placeholder="مثلاً: Funny Modi vs Pakistan Army 😄">
+  <br>
+  <button onclick="generateVideo()">ویڈیو بنائیں</button>
+
+  <footer>Powered by My Text Video AI</footer>
+
+  <script>
+    function generateVideo() {
+      const text = document.getElementById('userText').value.trim();
+      if (text === "") {
+        alert("براہ کرم کچھ لکھیں!");
+        return;
+      }
+      // Pika.art redirect
+      const url = `https://pika.art/?prompt=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
